@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center">Course Outcomes</h2>
+<div class="table-responsive">
+    <table class="custom-table table-bordered">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Outcome Number</th>
+                <th>Description</th>
+                <th class="action-column">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for co in course_outcomes %}
+            <tr>
+                <td>{{ co.course.course_name }}</td>
+                <td>{{ co.outcome_number }}</td>
+                <td>{{ co.description }}</td>
+                <td class="action-column">
+                    <a href="{% url 'update_course_outcome' co.pk %}" class="btn btn-link" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="{% url 'delete_course_outcome' co.pk %}" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">No Course Outcomes found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="text-center mt-4">
+    <a href="{% url 'add_course_outcome' %}" class="btn btn-success">
+        <i class="fas fa-plus-circle"></i> Add New Course Outcome
+    </a>
+</div>
+{% endblock %}

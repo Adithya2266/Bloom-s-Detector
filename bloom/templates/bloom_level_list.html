@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h2 class="intro-heading text-center">Bloom's Levels</h2>
+    <div class="table-responsive">
+        <table class="custom-table table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Bloom's Level</th>
+                    <th>Description</th>
+                    <th class="action-column text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bloom_level in bloom_levels %}
+                <tr>
+                    <td class="text-center">{{ bloom_level.level_name }}</td>
+                    <td class="description-cell text-center">{{ bloom_level.description }}</td>
+                    <td class="action-column text-center">
+                        <a href="{% url 'update_bloom_level' bloom_level.pk %}" class="btn btn-link" title="Edit">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a href="{% url 'delete_bloom_level' bloom_level.pk %}" class="btn btn-link" title="Delete">
+                            <i class="fa fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center">No Bloom's Levels found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{% url 'add_bloom_level' %}" class="nani">Add New Bloom's Level</a>
+    </div>
+</main>
+{% endblock %}

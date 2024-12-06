@@ -1,0 +1,10 @@
+<h1>Bloom's Taxonomy Quiz</h1>
+<form method="POST">
+    {% csrf_token %}
+    <p><strong>{{ question.question }}</strong></p>
+    {% for option in question.options %}
+        <input type="radio" name="answer" value="{{ option }}"> {{ option }}<br>
+    {% endfor %}
+    <input type="hidden" name="question_id" value="{{ question.id }}">
+    <button type="submit">Submit</button>
+</form>

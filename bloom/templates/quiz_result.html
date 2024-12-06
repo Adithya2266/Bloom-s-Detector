@@ -1,0 +1,8 @@
+<h1>Quiz Result</h1>
+{% if is_correct %}
+    <p>🎉 Correct! Well done.</p>
+{% else %}
+    <p>❌ Incorrect. The correct answer is {{ question.correct_answer }}.</p>
+{% endif %}
+<p>Explanation: {{ question.explanation }}</p>
+<a href="{% url 'bloom_quiz' %}">Try Another Question</a>

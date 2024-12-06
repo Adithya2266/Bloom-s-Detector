@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Course List{% endblock %}
+
+{% block content %}
+<main class="container my-4">
+    <h2 class="intro-heading text-center">Course List</h2>
+
+    <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+        <table class="table table-bordered table-hover align-middle custom-table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="text-center">Course Name</th>
+                    <th scope="col" class="text-center">Course Code</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td class="text-center">{{ course.course_name }}</td>
+                    <td class="text-center">{{ course.course_code }}</td>
+                    <td class="text-center action-column">
+                        <a href="{% url 'delete_course' course.id %}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center">No Courses found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'add_course' %}" class="btn btn-success btn-lg custom-button">
+            <i class="fas fa-plus-circle"></i> Add New Course
+        </a>
+    </div>
+    
+</main>
+{% endblock %}

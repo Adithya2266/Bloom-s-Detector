@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Definitions{% endblock %}
+
+{% block content %}
+<!-- Bootstrap container for centered content -->
+<div class="container mt-5">
+
+    <!-- Page Heading -->
+    <h1 class="text-center mb-5 text-primary display-4 font-weight-bold">Understanding Bloom's Taxonomy, Course Outcomes, and Program Outcomes</h1>
+    
+    <!-- Bloom's Taxonomy Section -->
+    <section class="mb-5 p-4 rounded shadow-lg bg-light">
+        <h2 class="text-info mb-3">What is Bloom's Taxonomy?</h2>
+        <p class="lead text-muted">
+            Bloom's Taxonomy is a hierarchical framework used to classify educational learning objectives 
+            into levels of complexity and specificity. It helps instructors design, assess, and categorize 
+            learning activities based on cognitive skills.
+        </p>
+        <p><strong class="text-dark">The six levels of Bloom's Taxonomy (revised version) are:</strong></p>
+        <ul class="no-bullets">
+            <li><strong>Remembering:</strong> Recalling facts and basic concepts.</li>
+            <li><strong>Understanding:</strong> Explaining ideas or concepts.</li>
+            <li><strong>Applying:</strong> Using information in new situations.</li>
+            <li><strong>Analyzing:</strong> Breaking information into parts to explore relationships.</li>
+            <li><strong>Evaluating:</strong> Justifying a decision or course of action.</li>
+            <li><strong>Creating:</strong> Producing new or original work.</li>
+        </ul>
+    </section>
+
+    <!-- Course Outcomes Section -->
+    <section class="mb-5 p-4 rounded shadow-lg bg-light">
+        <h2 class="text-info mb-3">What are Course Outcomes (COs)?</h2>
+        <p class="lead text-muted">
+            Course Outcomes (COs) are specific statements that define what a student is expected to 
+            achieve at the end of a course. COs are measurable and align with Program Outcomes (POs).
+        </p>
+        <p><strong class="text-dark">Examples of Course Outcomes:</strong></p>
+        <ul class="no-bullets">
+            <li><em>"At the end of this course, students will be able to analyze sorting algorithms."</em></li>
+            <li><em>"Students will design and implement database schemas."</em></li>
+        </ul>
+    </section>
+
+    <!-- Program Outcomes Section -->
+    <section class="mb-5 p-4 rounded shadow-lg bg-light">
+        <h2 class="text-info mb-3">What are Program Outcomes (POs)?</h2>
+        <p class="lead text-muted">
+            Program Outcomes (POs) are broad statements that describe the knowledge, skills, and attitudes 
+            students should have acquired by the time they graduate from a program. These are defined by 
+            national or institutional accreditation bodies and often align with industry requirements.
+        </p>
+        <p><strong class="text-dark">Examples of Program Outcomes:</strong></p>
+        <ul class="no-bullets">
+            <li><em>"Ability to apply engineering principles to solve complex problems."</em></li>
+            <li><em>"Demonstrate professional ethics and responsibility in practice."</em></li>
+        </ul>
+    </section>
+
+</div>
+
+{% endblock %}

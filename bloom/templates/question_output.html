@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper Mapping Output</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @media print {
+            .no-print {
+                display: none; /* Hide elements with the "no-print" class when printing */
+            }
+        }
+        header {
+            background-color: white; /* Updated color */
+            color: rgb(18, 17, 17);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header .subtext {
+            font-size: 1rem;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        // JavaScript function to print the content
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        SRM University AP
+        <div class="subtext">Amaravati</div>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Question Paper</h1>
+        <h2 class="text-center">Course: {{ course.course_name }}</h2>
+        <h3 class="text-center">Total Marks: {{ total_marks }}</h3>
+
+        {% if section_results %}
+            {% for section in section_results %}
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Section {{ section.section_index }} (Marks: {{ section.section_marks }})</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for question in section.questions %}
+                            <p><strong>Question:</strong> {{ question.question }}</p>
+                            
+                            <p><strong>Bloom's Level:</strong> {{ question.blooms_level }}</p>
+                            <p><strong>CO:</strong> {{ question.co }}</p>
+                            <p><strong>PO:</strong> {{ question.po }}</p>
+                            <hr>
+                        {% endfor %}
+                        <h6>Bloom's Level Summary:</h6>
+                        <ul>
+                            {% for level, count in section.bloom_summary.items %}
+                                <li>{{ level }}: {{ count }}%</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-warning">
+                No sections or questions found.
+            </div>
+        {% endif %}
+
+        <div class="text-center mt-4 no-print">
+            <button class="btn btn-success" onclick="printPage()">Print Question Paper</button>
+            <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

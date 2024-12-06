@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Outcome Mapping Tool{% endblock %}
+
+{% block content %}
+<div class="center-content">
+    <h3 class="intro-heading">Welcome to the Outcome Mapping Tool!</h3>
+    
+    <div class="about-section">
+        <p><span class="section-title">About the Project</span><br>
+           Our Outcome Mapping Tool is designed to help educators and academic institutions automate the process of mapping questions to <span class="highlight">Course Outcomes (COs)</span>, <span class="highlight">Program Outcomes (POs)</span>, and <span class="highlight">Bloom’s Taxonomy Levels</span>. This tool leverages <span class="highlight">Natural Language Processing (NLP)</span>, using advanced machine learning techniques to analyze question content and assign educational outcomes based on similarity and cognitive complexity.
+        </p>
+    </div>
+
+    <div class="goals-section">
+        <p><span class="section-title">Project Goals</span></p>
+        <ol class="styled-list">
+            <li><strong>Automate Outcome Mapping:</strong> Quickly and accurately assign COs, POs, and Bloom’s Levels to questions, saving educators significant time and ensuring objective alignment.</li>
+            <li><strong>Enhance Assessment Quality:</strong> By consistently linking questions with learning objectives, educators can create assessments that better reflect course and program goals.</li>
+            <li><strong>Support Educational Transparency:</strong> The system clearly displays mapped outcomes for each question, making it easier to understand and track how assessments align with learning expectations.</li>
+        </ol>
+    </div>
+
+    <div class="features-section">
+        <p><span class="section-title">Key Features</span></p>
+        <ul class="styled-list">
+            <li><strong>Automated CO and PO Mapping:</strong> Using state-of-the-art NLP models, the tool automatically identifies the most relevant Course Outcome and Program Outcome for each question.</li>
+            <li><strong>Bloom’s Taxonomy Classification:</strong> The tool assigns a Bloom’s Level (Remember, Understand, Apply, etc.) based on the question's cognitive complexity, aligning it with the desired educational objective.</li>
+            <li><strong>Customizable for Multiple Courses:</strong> Supports mapping across various subjects, enabling institutions to use it across departments.</li>
+        </ul>
+    </div>
+
+    <div class="how-it-works-section">
+        <p><span class="section-title">How It Works</span></p>
+        <ol class="styled-list">
+            <li><strong>Question Input:</strong> Users can input questions directly into the system.</li>
+            <li><strong>NLP-Powered Analysis:</strong> The tool compares the question’s intent and content with CO descriptions using Sentence-BERT embeddings.</li>
+            <li><strong>Outcome Display:</strong> Within seconds, the system presents the mapped CO, PO, and Bloom’s Level for the question, helping educators immediately assess its alignment with learning objectives.</li>
+        </ol>
+    </div>
+
+    <div class="beneficiaries-section">
+        <p><span class="section-title">Who Can Benefit?</span><br>
+           This tool is perfect for:
+           <ul class="styled-list">
+               <li><strong>Educators and Faculty:</strong> Simplify the process of aligning assessments with educational goals.</li>
+               <li><strong>Institutions:</strong> Provide a unified approach to tracking and verifying learning outcomes.</li>
+               <li><strong>Accreditation Bodies:</strong> Enhance documentation for accreditation by showing evidence of assessment alignment.</li>
+           </ul>
+        </p>
+    </div>
+
+    <p class="explore-text">Explore the tool to experience how advanced AI-driven solutions can streamline educational assessments, improve alignment with learning goals, and create a more transparent, efficient approach to outcome mapping!</p>
+</div>
+{% endblock %}

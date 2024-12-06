@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Program Outcome{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Program Outcome</h1>
+    <p>Are you sure you want to delete the Program Outcome "<strong>{{ program_outcome.description }}</strong>"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a href="{% url 'list_program_outcomes' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

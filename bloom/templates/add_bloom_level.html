@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add Bloom Level</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-save">Save</button>
+    </form>
+    <a href="{% url 'list_bloom_levels' %}" class="back-link">Back to Bloom Levels</a>
+</div>
+{% endblock %}

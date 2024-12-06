@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Course Outcome{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Course Outcome</h1>
+    <p>Are you sure you want to delete the Course Outcome "<strong>{{ course_outcome.description }}</strong>"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a href="{% url 'list_course_outcomes' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

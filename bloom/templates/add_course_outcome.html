@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add Course Outcome</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-save">Save</button>
+    </form>
+    <a href="{% url 'list_course_outcomes' %}" class="back-link">Back to Course Outcomes</a>
+</div>
+{% endblock %}
